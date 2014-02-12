@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ddSlick Menu</title>
+    
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://dl.dropboxusercontent.com/u/40036711/Scripts/jquery.ddslick.min.js"></script>
+     
+        
+      
+
+    <script>
+        
+        $('#demoBasic').ddslick({
+            data: ddData,
+            width: 300,
+            imagePosition: "left",
+            selectText: "Select your favorite social network",
+            onSelected: function (data) {
+            console.log(data);
+         }
+         });
+        
+        var ddData = [
+        {
+            text: "Facebook",
+            value: 1,
+            selected: false,
+            description: "Go to facebook.com",
+            url: "https://www.facebook.com",
+            imageSrc: "http://dl.dropboxusercontent.com/u/40036711/Images/facebook-icon-32.png"
+                //"https://www.facebook.com/olivia.hall.7545"
+        },
+    
+        {
+            text: "Twitter",
+            value: 2,
+            selected: false,
+            description: "Go to twitter.com",
+            url: "https://twitter.com",
+            imageSrc: "http://dl.dropboxusercontent.com/u/40036711/Images/twitter-icon-32.png"
+                //"https://twitter.com/olivia_hall3"
+        },
+        
+        {
+            text: "LinkedIn",
+            value: 3,
+            selected: false,
+            description: "Go to linkedin.com",
+            url: "www.linkedin.com",
+            imageSrc: "http://dl.dropboxusercontent.com/u/40036711/Images/linkedin-icon-32.png"
+                //"www.linkedin.com/pub/olivia-hall/67/3b0/830/"
+        },
+    
+        {
+            text: "Foursquare",
+            value: 4,
+            selected: false,
+            description: "Go to foursquare.com",
+            url: "http://www.foursquare.com",
+            imageSrc: "http://dl.dropboxusercontent.com/u/40036711/Images/foursquare-icon-32.png"
+        }
+        
+        ];
+        
+        $(document).ready(function(){
+        $('#myDropdown').ddslick({
+            data: ddData,
+            width: 300,
+            selectText: "Select your favorite social network",
+            onSelected: function (data) {
+                window.location = data.selectedData.url;}
+                
+                
+                });
+        });
+          
+    </script>
+    
+</head>   
+
+<body>
+
+<div id="myDropdown"></div>
+
+</body>
+</html>
